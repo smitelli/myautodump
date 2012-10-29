@@ -29,7 +29,9 @@ that should be installed and working too.
     
     `chown root:root config.ini /path/to/dumps`
     
-    `chmod 600 config.ini /path/to/dumps`
+    `chmod 600 config.ini`
+    
+    `chmod 700 /path/to/dumps`
     
 5.  `chmod a+x myautodump.sh`
 
