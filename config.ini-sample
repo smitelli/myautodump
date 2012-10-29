@@ -1,0 +1,23 @@
+[mysql]
+; The host (and optionally, port) of the MySQL server to dump
+server = "127.0.0.1:3306"
+
+; User name and password of an account capable of dumping every database
+username = "root"
+password = "ROOT PASSWORD HERE"
+
+; The full path to the mysqldump binary
+mysqldump = "/usr/bin/mysqldump"
+
+[output]
+; Directory to store the SQL dumps in (must exist and be writable)
+path = "/root/myautodump/dumps"
+
+; The full path to the gzip binary (or other compression utility), and arguments
+gzip = "/bin/gzip -4"
+
+[db_options]
+; If a database name matches one of the following keys, the corresponding value
+; will be passed as a command-line argument to mysqldump.
+information_schema = "--skip-lock-tables"
+performance_schema = "--skip-lock-tables"
