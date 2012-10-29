@@ -44,12 +44,13 @@
     // Run the dump; and time how long it took
     $start = microtime(TRUE);
     exec($command);
+    chmod($out_file, 0600);
     $duration = round(microtime(TRUE) - $start, 2);
     
     syslog(LOG_INFO, "Dumped `$db` to $out_file ($duration s)");
   }
   
-  // Not going to need these anymore
+  // Not going to need the log anymore
   syslog(LOG_INFO, '========== MyAutoDump is finished ==========');
   closelog();
 
