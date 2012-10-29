@@ -41,7 +41,7 @@
     $command .= ' | ' . escapeshellcmd($config['output']['gzip']);
     $command .= ' > ' . escapeshellcmd($out_file);
     
-    // Run the dump; and time how long it took
+    // Run the dump; lock the output file down; time how long it took to do
     $start = microtime(TRUE);
     exec($command);
     chmod($out_file, 0600);
