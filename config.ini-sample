@@ -19,5 +19,6 @@ gzip = "/bin/gzip -4"
 [db_options]
 ; If a database name matches one of the following keys, the corresponding value
 ; will be passed as a command-line argument to mysqldump.
+mysql = "--events"
 information_schema = "--skip-lock-tables"
 performance_schema = "--skip-lock-tables"
